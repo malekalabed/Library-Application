@@ -1,6 +1,6 @@
 package com.company.services;
 
-import LIBRARY.PROJECT.interfaces.I_Menu;
+import com.company.interfaces.I_Menu;
 
 
 public class Authentication_Services implements I_Menu {

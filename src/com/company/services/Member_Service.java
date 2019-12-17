@@ -1,10 +1,9 @@
 package com.company.services;
 
-import LIBRARY.PROJECT.interfaces.I_LoginService;
-import LIBRARY.PROJECT.interfaces.I_Services;
-import LIBRARY.PROJECT.models.Member;
-import LIBRARY.PROJECT.repositories.Data_Repository;
-
+import com.company.interfaces.I_LoginService;
+import com.company.interfaces.I_Services;
+import com.company.models.Member;
+import com.company.repositories.Data_Repository;
 import java.util.List;
 
 public class Member_Service implements I_Services<Member>,I_LoginService<Member> {

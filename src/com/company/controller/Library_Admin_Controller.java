@@ -1,11 +1,11 @@
 package com.company.controller;
 
-import LIBRARY.PROJECT.AppHelper;
-import LIBRARY.PROJECT.interfaces.I_Menu;
-import LIBRARY.PROJECT.models.Book;
-import LIBRARY.PROJECT.models.Member;
-import LIBRARY.PROJECT.services.Book_Service;
-import LIBRARY.PROJECT.services.Member_Service;
+import com.company.AppHelper;
+import com.company.interfaces.I_Menu;
+import com.company.models.Book;
+import com.company.models.Member;
+import com.company.services.Book_Service;
+import com.company.services.Member_Service;
 
 
 public class Library_Admin_Controller implements I_Menu {
