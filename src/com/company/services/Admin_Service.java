@@ -1,8 +1,8 @@
 package com.company.services;
 
-import LIBRARY.PROJECT.interfaces.I_LoginService;
-import LIBRARY.PROJECT.models.Admin;
-import LIBRARY.PROJECT.repositories.Data_Repository;
+import com.company.interfaces.I_LoginService;
+import com.company.models.Admin;
+import com.company.repositories.Data_Repository;
 
 import java.util.List;
 

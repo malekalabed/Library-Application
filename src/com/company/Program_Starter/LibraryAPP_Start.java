@@ -1,6 +1,6 @@
 package com.company.Program_Starter;
 
-import LIBRARY.PROJECT.controller.Library_Admin_Controller;
+import com.company.controller.Library_Admin_Controller;
 
 public class LibraryAPP_Start {
 
@@ -8,7 +8,7 @@ public class LibraryAPP_Start {
 
         Library_Admin_Controller admin_controller = new Library_Admin_Controller();
 
-       admin_controller.mainMenu();
+        admin_controller.mainMenu();
 
     }
 }

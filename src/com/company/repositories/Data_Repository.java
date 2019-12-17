@@ -1,17 +1,15 @@
 package com.company.repositories;
 
-import com.company.models.Book;
-import com.company.models.Card;
-import com.company.models.Member;
-
+import com.company.AppHelper;
+import com.company.models.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Data_Repository {
 
-   private List<Book> booksList;
-   private List<Member> membersList;
+    private List<Book> booksList;
+    private List<Member> membersList;
 
 
     public Data_Repository() {

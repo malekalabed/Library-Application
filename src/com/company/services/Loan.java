@@ -1,5 +1,7 @@
 package com.company.services;
 
+import com.company.models.Book;
+
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

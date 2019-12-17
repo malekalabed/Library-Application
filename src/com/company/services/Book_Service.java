@@ -1,9 +1,9 @@
 package com.company.services;
 
-import LIBRARY.PROJECT.AppHelper;
-import LIBRARY.PROJECT.interfaces.I_Services;
-import LIBRARY.PROJECT.models.Book;
-import LIBRARY.PROJECT.repositories.Data_Repository;
+import com.company.AppHelper;
+import com.company.interfaces.I_Services;
+import com.company.models.Book;
+import com.company.repositories.Data_Repository;
 
 import java.util.Collections;
 import java.util.List;
