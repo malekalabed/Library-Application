@@ -7,24 +7,24 @@ public class Member implements Serializable {
     private String ssn;
     private String firstName;
     private String lastName;
-    private String address;
+    private String homeAddress;
+    private String emailAddress;
     private String phoneNumber;
     private String password;
-    private Author memberShipCard;
-    private boolean errorOccurred;
+
+    private double accountBalance = 100;
 
     public Member() {
     }
 
-    public Member(String ssn, String firstName, String lastName, String address, String phoneNumber, String password, Author memberShipCard) {
+    public Member(String ssn, String firstName, String lastName, String homeAddress, String phoneNumber, String password,String emailAddress) {
         this.ssn = ssn;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
+        this.homeAddress = homeAddress;
         this.phoneNumber = phoneNumber;
         this.password = password;
-        this.memberShipCard = memberShipCard;
-        this.errorOccurred = false;
+        this.emailAddress = emailAddress;
     }
 
 
@@ -38,7 +38,7 @@ public class Member implements Serializable {
     }
 
     public void setSsn(String ssn) {
-            this.ssn = ssn;
+        this.ssn = ssn;
     }
 
     public String getFirstName() {
@@ -46,25 +46,23 @@ public class Member implements Serializable {
     }
 
     public void setFirstName(String firstName) {
-            this.firstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-
     public void setLastName(String lastName) {
-            this.lastName = lastName;
-
+        this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
 
     public String getPhoneNumber() {
@@ -72,37 +70,36 @@ public class Member implements Serializable {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
-
-    public Author getMemberShipCard() {
-        return memberShipCard;
-    }
-
-    public void setMemberShipCard(Author memberShipCard) {
-        this.memberShipCard = memberShipCard;
-    }
-
 
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
-            this.password = password;
+        this.password = password;
     }
 
-    public boolean isErrorOccurred() {
-        return errorOccurred;
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double amount) {
+
+        this.accountBalance = accountBalance - amount;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     @Override
     public String toString() {
-        return "Member\n  Social security number: " + ssn +"\n  Name: " + firstName+" "+lastName+"\n  Address: " + address +"\n  Phone number: " + phoneNumber;
-    }
-
-
-    public String memberWithCardTostring() {
-        return "Member\n  Social security number: " + ssn +"\n  Name: " + firstName +" "+lastName+"\n  Address: " + address +"\n  Phone number: " + phoneNumber+"\n      "+memberShipCard;
+        return "Member\n  Social security number: " + ssn +"\n  Name: " + firstName+" "+lastName+"\n  Address: " + homeAddress +"\n  Email Address: " + emailAddress+"\n  Phone number: " + phoneNumber+"\n  Account balance: Kr"+accountBalance;
     }
 }
