@@ -48,13 +48,13 @@ public class Data_Repository {
 
 
 
-        membersList.add(new Member("001","Stephan", "Ngaha","Vagen 23, Göteborg","75765","Stephan1234",new Card("Ngaha","001")));
-        membersList.add(new Member("002","Alan", "Tombson","Vagen 45, Göteborg","4535365","Alan1234",new Card("Tombson","002")));
-        membersList.add(new Member("003","Samuel","Jones","Vagen 1, Göteborg","1308080","Samuel1234",new Card("Jones","003")));
-        membersList.add(new Member("004","Brenda","Brown","Vagen 22, Göteborg","076564","Brenda1234",new Card("Brown","004")));
-        membersList.add(new Member("005","Ola","Magnusson","Vagen 41, Göteborg","253678","Ola1234",new Card("Magnusson","005")));
-        membersList.add(new Member("006","Daniel","Bjorn","Vagen 90, Göteborg","1121245","Daniel1234",new Card("Bjorn","006")));
-        membersList.add(new Member("007","Tobe","Anderson","Vagen 231, Göteborg","99879","Tobe1234",new Card("Tobe","007")));
+        membersList.add(new Member("001","Stephan", "Ngaha","Vagen 23, Göteborg","75765","Stephan1234",new Author("Ngaha","001")));
+        membersList.add(new Member("002","Alan", "Tombson","Vagen 45, Göteborg","4535365","Alan1234",new Author("Tombson","002")));
+        membersList.add(new Member("003","Samuel","Jones","Vagen 1, Göteborg","1308080","Samuel1234",new Author("Jones","003")));
+        membersList.add(new Member("004","Brenda","Brown","Vagen 22, Göteborg","076564","Brenda1234",new Author("Brown","004")));
+        membersList.add(new Member("005","Ola","Magnusson","Vagen 41, Göteborg","253678","Ola1234",new Author("Magnusson","005")));
+        membersList.add(new Member("006","Daniel","Bjorn","Vagen 90, Göteborg","1121245","Daniel1234",new Author("Bjorn","006")));
+        membersList.add(new Member("007","Tobe","Anderson","Vagen 231, Göteborg","99879","Tobe1234",new Author("Tobe","007")));
 
 
 

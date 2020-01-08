@@ -10,13 +10,13 @@ public class Member implements Serializable {
     private String address;
     private String phoneNumber;
     private String password;
-    private Card memberShipCard;
+    private Author memberShipCard;
     private boolean errorOccurred;
 
     public Member() {
     }
 
-    public Member(String ssn, String firstName, String lastName, String address, String phoneNumber, String password, Card memberShipCard) {
+    public Member(String ssn, String firstName, String lastName, String address, String phoneNumber, String password, Author memberShipCard) {
         this.ssn = ssn;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,11 +75,11 @@ public class Member implements Serializable {
             this.phoneNumber = phoneNumber;
     }
 
-    public Card getMemberShipCard() {
+    public Author getMemberShipCard() {
         return memberShipCard;
     }
 
-    public void setMemberShipCard(Card memberShipCard) {
+    public void setMemberShipCard(Author memberShipCard) {
         this.memberShipCard = memberShipCard;
     }
 
