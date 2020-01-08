@@ -4,19 +4,19 @@ import com.company.AppHelper;
 import com.company.interfaces.I_Services;
 import com.company.models.Book;
 import com.company.repositories.Data_Repository;
-
 import java.util.Collections;
 import java.util.List;
 
 public class Book_Service implements I_Services<Book> {
     private List<Book>books;
-    private Data_Repository repo = new Data_Repository();
 
     public Book_Service() {
+        Data_Repository repo = new Data_Repository();
         books = repo.getBooksList();
     }
 
 
+    @Override
     public List<Book> getAll() {
         return books;
     }
@@ -50,14 +50,14 @@ public class Book_Service implements I_Services<Book> {
 
     @Override
     public void removeObj(String unique_identifier) {
-          getAll().removeIf((Book b) -> b.getISBN_number().equals(unique_identifier));
-          System.out.println("\nTHE BOOK WITH ISBN [ "+unique_identifier+" ] WAS SUCCESSFULLY REMOVED!!!\n");
+        getAll().removeIf((Book b) -> b.getISBN_number().equals(unique_identifier));
+        System.out.println("\nTHE BOOK WITH ISBN [ "+unique_identifier+" ] WAS SUCCESSFULLY REMOVED!!!\n");
     }
 
     @Override
     public Book find(String unique_identifier) {
-        if (books != null)
-            for (Book book: books){
+        if (getAll() != null)
+            for (Book book: getAll()){
                 if (book.getISBN_number().equals(unique_identifier))
                     return book;
             }
@@ -67,7 +67,7 @@ public class Book_Service implements I_Services<Book> {
 
     @Override
     public void editInfo(String propertyToEdit, String id, String value1) {
-        for (Book b: books){
+        for (Book b: getAll()){
             if (b.getISBN_number().equals(id)){
                 if (propertyToEdit.equals("Language")){
                     b.setLanguage(value1);
@@ -82,33 +82,41 @@ public class Book_Service implements I_Services<Book> {
 
 
     public void getBooksOrderedByCategory(String category){
-        for (Book b: books){
+        for (Book b: getAll()){
             if (b.getCategory().equalsIgnoreCase(category)){
                 System.out.println(b);
             }
         }
     }
 
+    public void availableBooks(){
+        for (Book b: getAll()){
+            if (b.getStatus().equals("AVAILABLE")){
+                System.out.println("[BOOK]- TITLE: "+b.getTitle()+"         ISBN: "+b.getISBN_number());
+            }
+        }
+
+    }
 
     public void getBooksCategories(){
         System.out.println("\n------- Available books and their categories ------");
-        for (Book b: books){
+        for (Book b: getAll()){
             System.out.println("[BOOK]- TITLE: "+b.getTitle()+".        CATEGORY: "+b.getCategory()+"\n");
         }
     }
 
 
     public void getBooksOrderedByLanguage(String language){
-        for (Book b: books){
+        for (Book b: getAll()){
             if (b.getLanguage().equalsIgnoreCase(language)){
-                    System.out.println(b);
+                System.out.println(b);
             }
         }
     }
 
     public void getBooksLanguages(){
         System.out.println("\n------- AVAILABLE BOOKS ORDERED BY LANGUAGES ------");
-        for (Book b: books){
+        for (Book b: getAll()){
             System.out.println("[BOOK]- TITLE: "+b.getTitle()+"        LANGUAGE: "+b.getLanguage()+"\n");
         }
     }
@@ -116,18 +124,18 @@ public class Book_Service implements I_Services<Book> {
 
     public void getOrderedBooksByTitles(){
         System.out.println("\n --------- AVAILABLE BOOKS ORDERED BY TITLES  -------");
-         Collections.sort(books);
-        for (Book b: books){
+        Collections.sort(getAll());
+        for (Book b: getAll()){
             System.out.println("[BOOK]- TITLE: "+b.getTitle()+"         ISBN: "+b.getISBN_number());
         }
     }
 
     private boolean valid(Book obj){
-        for (int i=0;i<books.size();i++){
-            if (books.get(i).getISBN_number().equalsIgnoreCase(obj.getISBN_number())
-                    && !books.get(i).getTitle().equalsIgnoreCase(obj.getTitle())
-                    || !books.get(i).getCategory().equalsIgnoreCase(obj.getCategory())
-                    || !books.get(i).getAuthorName().equals(obj.getAuthorName())){
+        for (int i=0;i<getAll().size();i++){
+            if (getAll().get(i).getISBN_number().equalsIgnoreCase(obj.getISBN_number())
+                    && !getAll().get(i).getTitle().equalsIgnoreCase(obj.getTitle())
+                    || !getAll().get(i).getCategory().equalsIgnoreCase(obj.getCategory())
+                    || !getAll().get(i).getAuthorName().equals(obj.getAuthorName())){
                 return false;
             }
         }
@@ -135,5 +143,5 @@ public class Book_Service implements I_Services<Book> {
     }
 
 
-}
 
+}
