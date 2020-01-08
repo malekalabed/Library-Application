@@ -195,7 +195,7 @@ private Book_Service book_service = new Book_Service();
  }
 
  private void searchBook() throws InterruptedException {
-     System.out.print("\nProvide ISBN for the book your are looking for > ");
+     System.out.print("\nProvide ISBN for the book you are looking for > ");
      String isbn = AppHelper.userInput.nextLine();
      if (book_service.find(isbn) != null){
          System.out.println("\n"+book_service.find(isbn)+"\n\n");
